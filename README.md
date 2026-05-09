@@ -2,28 +2,37 @@
 
 A minimal Django backend for tracking engineering issues — bugs filed, priorities set, statuses updated.
 
+**GitHub Repository:** https://github.com/V3669/devtrack-assignment
+
 ---
 
 ## Setup & Run
 
-```bash
-# 1. Clone the repo
-git clone https://github.com/<your-username>/devtrack.git
-cd devtrack
+### Step 1 — Clone & install
 
-# 2. Create and activate virtual environment
+```bash
+git clone https://github.com/V3669/devtrack-assignment.git
+cd devtrack-assignment
+
 python3 -m venv venv
 source venv/bin/activate        # Windows: venv\Scripts\activate
 
-# 3. Install dependencies
 pip install -r requirements.txt
+```
 
-# 4. Start the development server
+### Step 2 — Start the server
+
+```bash
 python manage.py runserver
 ```
 
-The server starts at `http://127.0.0.1:8000/`.  
-No database migrations are needed — data is stored in `reporters.json` and `issues.json` at the project root.
+> **Note:** You may see a warning about unapplied migrations. This is safe to ignore — our app stores data in JSON files, not the database. The warning is from Django's built-in admin/auth apps which we don't use.
+
+The server starts at **`http://127.0.0.1:8000/`**
+
+### Step 3 — Verify it's running
+
+Open `http://127.0.0.1:8000/api/issues/` in your browser. You should see `[]`.
 
 ---
 
